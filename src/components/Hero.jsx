@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
     <section
-      className="hero overflow-hidden bg-white md:h-[calc(100svh-5.5rem)] lg:h-[calc(100svh-6rem)]"
+      className="hero relative z-[1] overflow-hidden bg-white md:h-[calc(100svh-5.5rem)] lg:h-[calc(100svh-6rem)]"
       aria-labelledby="hero-heading"
     >
       <div className="grid h-full min-h-0 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:grid-cols-[minmax(0,11fr)_minmax(0,9fr)]">
@@ -30,7 +30,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-cabinet relative min-h-[240px] min-w-0 overflow-hidden md:h-full md:min-h-0">
+        <div className="hero-cabinet relative z-[10] min-h-[240px] min-w-0 overflow-hidden md:h-full md:min-h-0">
           <img
             src="/images/hero-cabinet.jpg"
             alt="AYRA forest-green bottle displayed in a built-in oak cabinet"
