@@ -24,7 +24,7 @@ export default function ProductConfigurator() {
   return (
     <section
       id="shop"
-      className="scroll-mt-24 min-h-[800px] bg-[#1F3A34] py-16 text-white md:min-h-[840px] md:py-20 lg:min-h-[900px] lg:py-24"
+      className="relative z-0 overflow-hidden scroll-mt-24 min-h-[800px] bg-[#1F3A34] py-16 text-white md:z-auto md:overflow-visible md:min-h-[840px] md:py-20 lg:min-h-[900px] lg:py-24"
       aria-labelledby="configurator-heading"
     >
       <div className="mx-auto w-full max-w-[1320px] px-5 sm:px-8 lg:px-10">
