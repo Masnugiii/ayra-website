@@ -3,7 +3,7 @@ import { MenuIcon } from './Icons'
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-10 h-[4.5rem] border-b border-[#E7E5DE] bg-white md:h-[5.5rem] lg:h-24">
+    <header className="sticky top-0 h-[4.5rem] border-b border-[#E7E5DE] bg-white md:h-[5.5rem] lg:h-24">
       <div className="mx-auto flex h-full w-full min-w-0 max-w-[1280px] items-center justify-between gap-4 px-8 md:px-10 lg:px-12 xl:px-16">
         <a
           href="#top"

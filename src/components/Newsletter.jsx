@@ -9,7 +9,7 @@ export default function Newsletter() {
         alt="A person holding an AYRA bottle"
         width="1400"
         height="932"
-        className="absolute inset-0 h-full w-full object-cover object-[82%_16%] md:object-[88%_18%]"
+        className="absolute inset-0 h-full w-full object-cover object-[28%_40%] md:object-[88%_18%]"
       />
 
       <div className="relative aspect-[4/3] min-h-[300px] md:hidden" aria-hidden="true" />

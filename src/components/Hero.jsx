@@ -1,11 +1,11 @@
 export default function Hero() {
   return (
     <section
-      className="relative bg-white md:h-[calc(100svh-5.5rem)] lg:h-[calc(100svh-6rem)]"
+      className="hero overflow-hidden bg-white md:h-[calc(100svh-5.5rem)] lg:h-[calc(100svh-6rem)]"
       aria-labelledby="hero-heading"
     >
-      <div className="grid h-full min-h-0 items-stretch md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:grid-cols-[minmax(0,11fr)_minmax(0,9fr)]">
-        <div className="flex items-center">
+      <div className="grid h-full min-h-0 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:grid-cols-[minmax(0,11fr)_minmax(0,9fr)]">
+        <div className="hero-content flex min-h-0 items-center">
           <div className="w-full py-12 pr-6 pl-6 md:py-8 md:pr-8 md:pl-[calc(6vw+1.5rem)] lg:pl-[calc(10vw+3.5rem)] xl:pr-4 xl:pl-[calc(12vw+4.5rem)] 2xl:pr-0">
             <div className="min-w-0 max-w-[560px] md:ml-auto lg:max-w-[620px] xl:max-w-[650px] 2xl:-mr-8">
               <p className="eyebrow fade-up">Everyday hydration</p>
@@ -30,14 +30,14 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="flex min-h-[240px] min-w-0 items-center justify-center overflow-hidden md:h-full md:min-h-0 md:max-h-[calc(100svh-5.5rem)] lg:max-h-[calc(100svh-6rem)]">
+        <div className="hero-cabinet relative min-h-[240px] min-w-0 overflow-hidden md:h-full md:min-h-0">
           <img
             src="/images/hero-cabinet.jpg"
             alt="AYRA forest-green bottle displayed in a built-in oak cabinet"
             width="983"
             height="1475"
             fetchPriority="high"
-            className="h-full w-full max-h-full object-contain object-center"
+            className="block h-full w-full object-contain object-top"
           />
         </div>
       </div>
