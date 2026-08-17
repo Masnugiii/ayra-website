@@ -32,7 +32,10 @@ export default function Navbar() {
     const img = document.querySelector('[aria-labelledby="hero-heading"] img')
 
     const update = () => {
-      if (window.scrollY > 20) return
+      if (window.scrollY > 20 || window.matchMedia('(max-width: 1023px)').matches) {
+        setGap(null)
+        return
+      }
       setGap(measureCabinetGap(header))
     }
 
@@ -53,12 +56,14 @@ export default function Navbar() {
   return (
     <header
       ref={headerRef}
-      className={`inset-x-0 top-0 ${scrolled ? 'fixed z-[100]' : 'absolute'}`}
+      className={`inset-x-0 top-0 ${
+        scrolled ? 'fixed z-[100]' : 'absolute z-[100] lg:z-auto'
+      }`}
     >
       <div
         aria-hidden="true"
         className={`pointer-events-none absolute inset-y-0 left-0 z-50 bg-white transition-[width] duration-300 ease-out ${
-          scrolled ? 'w-full' : 'w-full md:w-[57.5%] lg:w-[55%]'
+          scrolled ? 'w-full' : 'w-full lg:w-[55%]'
         }`}
       />
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 z-[100] h-px">

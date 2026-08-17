@@ -31,12 +31,12 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative min-h-[240px] min-w-0 overflow-visible md:h-full md:min-h-0">
+        <div className="relative z-0 min-h-[240px] min-w-0 overflow-hidden md:h-full md:min-h-0 md:overflow-visible">
           <div
             className={`h-full w-full md:absolute md:right-0 md:bottom-0 md:left-0 md:h-auto md:transition-[top] md:duration-300 md:ease-out ${
               scrolled
-                ? 'md:top-[5.5rem] md:z-40 lg:top-24'
-                : 'md:top-5 md:z-[60] lg:top-0'
+                ? 'md:top-[5.5rem] md:z-0 lg:top-24'
+                : 'md:top-5 lg:top-0 lg:z-[60]'
             }`}
           >
             <img
