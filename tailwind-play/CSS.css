@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-ayra-cream: #f5f3ee;
+  --color-ayra-forest: #1f3a34;
+  --color-ayra-lime: #c8d96b;
+  --color-ayra-ink: #18201e;
+  --color-ayra-mist: #dde1da;
+  --color-ayra-sage: #aebba7;
+  --color-ayra-sand: #d8c7aa;
+  --color-ayra-charcoal: #303532;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ayra-cream);
+  color: var(--color-ayra-ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: clip;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-width: 0;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-ayra-lime);
+  color: var(--color-ayra-forest);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ayra-forest);
+  outline-offset: 3px;
+}
+
+/* Hero cabinet fills the right column below the navbar, clipped to the hero. */
+@media (min-width: 768px) {
+  #hero-cabinet {
+    top: 5.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    left: 0;
+    height: auto;
+  }
+
+  #hero-cabinet img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero-cabinet {
+    top: 6rem;
+  }
+}
+
+#top.is-scrolled > header {
+  position: fixed;
+  z-index: 100;
+}
+
+#top.is-scrolled .header-surface {
+  width: 100%;
+}
+
+.bottle-shot {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bottle-shot.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#bottle-stage {
+  transform: scale(1);
+  transform-origin: bottom;
+}
+
+#bottle-stage.is-large {
+  transform: scale(1.13);
+}
+
+.color-swatch {
+  border: 1px solid rgb(255 255 255 / 0.2);
+  box-shadow: none;
+}
+
+.color-swatch:hover {
+  border-color: rgb(255 255 255 / 0.5);
+}
+
+.color-swatch.is-active,
+.color-swatch.is-active:hover {
+  border-color: transparent;
+  box-shadow:
+    0 0 0 2px #1f3a34,
+    0 0 0 4px #c8d96b,
+    0 0 0 5px rgb(200 217 107 / 0.55);
+}
+
+.color-dot {
+  background: rgb(255 255 255 / 0.3);
+}
+
+.color-dot:hover {
+  background: rgb(255 255 255 / 0.55);
+}
+
+.color-dot.is-active,
+.color-dot.is-active:hover {
+  background: #c8d96b;
+}
+
+.size-option {
+  border: 1px solid rgb(255 255 255 / 0.2);
+  background: transparent;
+}
+
+.size-option:hover {
+  border-color: rgb(255 255 255 / 0.4);
+}
+
+.size-option .size-volume {
+  color: rgb(255 255 255 / 0.55);
+}
+
+.size-option.is-active,
+.size-option.is-active:hover {
+  border-color: #c8d96b;
+  background: rgb(200 217 107 / 0.1);
+}
+
+.size-option.is-active .size-volume {
+  color: #c8d96b;
+}
+
+#back-to-top.is-visible {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 1.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition:
+      background-color 280ms ease,
+      color 280ms ease,
+      border-color 280ms ease,
+      transform 280ms ease;
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  .btn-primary {
+    background: var(--color-ayra-forest);
+    color: var(--color-ayra-cream);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-ayra-charcoal);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--color-ayra-forest);
+    border-color: var(--color-ayra-forest);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-ayra-forest);
+    color: var(--color-ayra-cream);
+  }
+
+  .btn-lime {
+    background: var(--color-ayra-lime);
+    color: var(--color-ayra-forest);
+  }
+
+  .btn-lime:hover {
+    background: var(--color-ayra-cream);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-ayra-forest);
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 1.5rem;
+    height: 1px;
+    background: var(--color-ayra-lime);
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 700ms ease-out;
+}
+
+.fade-up-delay-1 {
+  animation-delay: 80ms;
+}
+
+.fade-up-delay-2 {
+  animation-delay: 160ms;
+}
+
+.fade-up-delay-3 {
+  animation-delay: 240ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .fade-up,
+  .fade-up-delay-1,
+  .fade-up-delay-2,
+  .fade-up-delay-3 {
+    animation: none;
+  }
+
+  .btn,
+  .btn:active,
+  #bottle-stage,
+  .bottle-shot,
+  .header-surface,
+  #hero-cabinet,
+  #back-to-top {
+    transition: none;
+    transform: none;
+  }
+}
